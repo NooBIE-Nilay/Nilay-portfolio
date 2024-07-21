@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Photo } from "@/components/ui/photo";
 import { FiDownload } from "react-icons/fi";
 import Link from "next/link";
+import { Stats } from "@/components/Stats";
 export default function Home() {
   return (
     <section className="h-full">
@@ -47,6 +48,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   );
 }
