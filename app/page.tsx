@@ -9,16 +9,16 @@ export default function Home() {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left">
-            <span>Software Developer</span>
+            <span>Software Engineer</span>
             <h1 className="h1">
               Hello I'm <br />{" "}
               <span className="text-accent"> Nilay Banerjee</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I'm a software developer from India who enjoys transforming ideas
-              into digital realities. Skilled in both frontend and backend
-              development using MERN and Next.js, I also have a deep
-              appreciation for the intricacies of C/C++ programming.
+              I'm a Software Engineering Student from India who enjoys
+              transforming ideas into digital realities. Skilled in both
+              frontend and backend development using MERN and Next.js, I also
+              have a deep appreciation for the intricacies of C/C++ programming.
             </p>
             <div className="flex flex-col xl:flex-row gap-8 items-center">
               <Button
@@ -37,7 +37,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          photo
+          <Photo />
         </div>
       </div>
     </section>
