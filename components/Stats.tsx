@@ -1,7 +1,7 @@
 "use client";
 import CountUp from "react-countup";
 const stats = [
-  { end: 1000, text: "Hours Of Coding" },
+  { end: 5000, text: "Hours Of Coding" },
   { end: 4, text: "Projects Completed" },
   { end: 8, text: "Technologies Mastered" },
   { end: 100, text: "Code Commits" },
