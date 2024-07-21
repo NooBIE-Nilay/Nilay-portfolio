@@ -4,13 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 
-const links = [
-  { name: "Home", path: "/" },
-  { name: "Services", path: "/services" },
-  { name: "Resume", path: "/resume" },
-  { name: "Work", path: "/work" },
-  { name: "Contact", path: "/contact" },
-];
+import { links } from "../lib/utils";
 
 export function Nav() {
   const pathname = usePathname();
