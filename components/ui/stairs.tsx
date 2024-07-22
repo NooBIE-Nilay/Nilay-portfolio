@@ -28,7 +28,7 @@ export default function Stairs() {
               ease: "easeInOut",
               delay: reverseindex(index) * 0.1,
             }}
-            className="h-full w-full bg-white relative"
+            className="relative h-full w-full bg-white"
           />
         );
       })}

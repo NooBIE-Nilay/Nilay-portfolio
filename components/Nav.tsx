@@ -16,8 +16,8 @@ export function Nav() {
             href={link.path}
             key={index}
             className={`${
-              link.path === pathname && "text-accent border-b-2 border-accent"
-            }  hover:text-accent transition-all`}
+              link.path === pathname && "border-b-2 border-accent text-accent"
+            } transition-all hover:text-accent`}
           >
             {link.name}
           </Link>

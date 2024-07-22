@@ -9,11 +9,11 @@ export default function StairTransition() {
     <>
       <AnimatePresence mode="wait">
         <div key={pathname}>
-          <div className="h-screen w-screen fixed top-0 left-0 right-0 pointer-events-none z-40 flex">
+          <div className="pointer-events-none fixed left-0 right-0 top-0 z-40 flex h-screen w-screen">
             <Stairs />
           </div>
           <motion.div
-            className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
+            className="pointer-events-none fixed top-0 h-screen w-screen bg-primary"
             initial={{ opacity: 1 }}
             animate={{
               opacity: 0,

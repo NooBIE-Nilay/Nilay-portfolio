@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Photo() {
   return (
-    <div className="w-full h-full relative ">
+    <div className="relative h-full w-full">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -20,7 +20,7 @@ export function Photo() {
             opacity: 1,
             transition: { delay: 1.7, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute "
+          className="absolute h-[298px] w-[298px] mix-blend-lighten xl:h-[498px] xl:w-[498px]"
         >
           <Image
             src="/assets/profile_pic.png"
@@ -28,13 +28,13 @@ export function Photo() {
             quality={100}
             fill
             alt="Profile Picture"
-            className="object-contain pr-1 md:ml-1 "
+            className="object-contain pr-1 md:ml-1"
           />
         </motion.div>
 
         {/* Animated Circle */}
         <motion.svg
-          className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
+          className="h-[300px] w-[300px] xl:h-[506px] xl:w-[506px]"
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"

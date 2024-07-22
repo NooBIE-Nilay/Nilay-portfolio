@@ -29,7 +29,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+    <section className="flex min-h-[80vh] flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -37,30 +37,30 @@ export default function Services() {
             opacity: 1,
             transition: { delay: 1.8, duration: 0.4, ease: "easeIn" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid grid-cols-1 gap-[60px] md:grid-cols-2"
         >
           {services.map((service, index) => {
             return (
               <div
                 key={index}
-                className="flex flex-1 flex-col justify-centergap-6 group"
+                className="justify-centergap-6 group flex flex-1 flex-col"
               >
-                <div className="w-full flex justify-between items-center ">
-                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+                <div className="flex w-full items-center justify-between">
+                  <div className="text-outline group-hover:text-outline-hover text-5xl font-extrabold text-transparent transition-all duration-500">
                     {service.num}
                   </div>
                   <Link
                     href={service.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent  transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                    className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white transition-all duration-500 hover:-rotate-45 group-hover:bg-accent"
                   >
-                    <BsArrowDownRight className="text-primary text-3xl" />
+                    <BsArrowDownRight className="text-3xl text-primary" />
                   </Link>
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                <h2 className="text-[42px] font-bold leading-none text-white transition-all duration-500 group-hover:text-accent">
                   {service.title}
                 </h2>
                 <p className="text-white/60">{service.description}</p>
-                <div className="border-b border-white/20 w-full"></div>
+                <div className="w-full border-b border-white/20"></div>
               </div>
             );
           })}
