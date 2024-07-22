@@ -23,12 +23,12 @@ export function Photo() {
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute "
         >
           <Image
-            src="/assets/img.png"
+            src="/assets/profile_pic.png"
             priority
             quality={100}
             fill
             alt="Profile Picture"
-            className="object-contain pt-4"
+            className="object-contain pr-1 md:ml-1 "
           />
         </motion.div>
 
@@ -55,7 +55,7 @@ export function Photo() {
             transition={{
               duration: 20,
               repeat: Infinity,
-              repeatType: "reverse",
+              repeatType: "mirror",
             }}
           />
         </motion.svg>
