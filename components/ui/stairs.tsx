@@ -1,5 +1,5 @@
 import { animate, motion } from "framer-motion";
-const totalSteps = 10;
+const totalSteps = 6;
 function reverseindex(index: number) {
   return totalSteps - index - 1;
 }
@@ -24,7 +24,7 @@ export default function Stairs() {
             animate="animate"
             exit="exit"
             transition={{
-              duration: 0.4,
+              duration: 0.3,
               ease: "easeInOut",
               delay: reverseindex(index) * 0.1,
             }}
