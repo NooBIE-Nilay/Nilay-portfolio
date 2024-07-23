@@ -17,10 +17,10 @@ export function Achievements() {
                 className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl bg-[#232329] px-10 py-6 lg:items-start"
               >
                 <span className="text-accent">{achievement.period}</span>
-                <h3 className="text-cl min-h-[60px] max-w-[260px] text-center lg:text-left">
+                <h3 className="max-w-[260px] text-xl lg:text-left">
                   {achievement.title}
                 </h3>
-                <div className="flex items-center gap-3">
+                <div className="mt-3 flex items-center gap-3">
                   <span className="h-[6px] w-[6px] rounded-full bg-accent"></span>
                   <p className="text-white/60">{achievement.description}</p>
                 </div>
