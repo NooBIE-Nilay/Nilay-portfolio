@@ -1,64 +1,11 @@
 "use client";
-
-import { FaHtml5, FaCss3, FaJs } from "react-icons/fa";
-import {
-  SiTailwindcss,
-  SiNextdotjs,
-  SiExpress,
-  SiMongodb,
-  SiNodedotjs,
-  SiReact,
-} from "react-icons/si";
-
 import { motion } from "framer-motion";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Achievements } from "@/components/acheivements";
 
-const skills = {
-  title: "My Skills",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio quae ea earum assumenda repellendus.",
-  skillsList: [
-    {
-      icons: <FaHtml5 />,
-      name: "HTML 5",
-    },
-    {
-      icons: <FaCss3 />,
-      name: "CSS 3",
-    },
-    {
-      icons: <FaJs />,
-      name: "Javascript",
-    },
-    {
-      icons: <SiNextdotjs />,
-      name: "Next.js",
-    },
-    {
-      icons: <SiMongodb />,
-      name: "MongoDB",
-    },
-    {
-      icons: <SiExpress />,
-      name: "Express",
-    },
-    {
-      icons: <SiReact />,
-      name: "React",
-    },
-
-    {
-      icons: <SiNodedotjs />,
-      name: "Node.js",
-    },
-    {
-      icons: <SiTailwindcss />,
-      name: "Tailwind",
-    },
-  ],
-};
+import { Achievements } from "@/components/Achievements";
+import { Education } from "@/components/Education";
+import { Skills } from "@/components/Skills";
 export default function Resume() {
   return (
     <section>
@@ -75,7 +22,11 @@ export default function Resume() {
             defaultValue="skills"
             className="flex flex-col gap-[60px] xl:flex-row"
           >
+<<<<<<< HEAD
             <TabsList className="max-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
+=======
+            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+>>>>>>> skills
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="achievements">Achievements</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
@@ -85,14 +36,14 @@ export default function Resume() {
               <TabsContent value="achievements" className="w-full">
                 <Achievements />
               </TabsContent>
-              <TabsContent value="skills" className="w-full">
-                Skiils
+              <TabsContent value="skills" className="w-full h-full">
+                <Skills />
               </TabsContent>
               <TabsContent value="about" className="w-full">
                 about
               </TabsContent>
               <TabsContent value="education" className="w-full">
-                education
+                <Education />
               </TabsContent>
             </div>
           </Tabs>

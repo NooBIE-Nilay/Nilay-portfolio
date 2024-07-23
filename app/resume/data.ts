@@ -86,22 +86,28 @@ export const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe consequuntur deleniti at minima non nobis quaerat? Dolor",
+    "Strong academic foundation built through years of focused learning. Pursuing B.Tech with a specialization in Computer Science & Systems Engineering. Possessing a solid grasp of COA, OS, DBMS. Eager to apply acquired knowledge to real-world challenges.",
   items: [
     {
-      institution: "",
-      degree: "",
-      period: "",
+      institution: "KIIT University",
+      degree: "B.Tech in CSSE",
+      period: "2022-Present",
+      remarks: "Current CGPA",
+      value: "8.63",
     },
     {
-      institution: "",
-      degree: "",
-      period: "",
+      institution: "Guru Tegh Bahadur Public School",
+      degree: "[CBSE] Higher Secondary",
+      period: "2020-2022",
+      remarks: "Percentage",
+      value: "82.6 %",
     },
     {
-      institution: "",
-      degree: "",
-      period: "",
+      institution: "Assembly Of God Church School",
+      degree: "[ICSE] Secondary",
+      period: "2009-2020",
+      remarks: "Percentage",
+      value: "83.4 %",
     },
   ],
 };
