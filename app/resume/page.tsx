@@ -22,11 +22,7 @@ export default function Resume() {
             defaultValue="skills"
             className="flex flex-col gap-[60px] xl:flex-row"
           >
-<<<<<<< HEAD
             <TabsList className="max-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
-=======
-            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
->>>>>>> skills
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="achievements">Achievements</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
@@ -36,7 +32,7 @@ export default function Resume() {
               <TabsContent value="achievements" className="w-full">
                 <Achievements />
               </TabsContent>
-              <TabsContent value="skills" className="w-full h-full">
+              <TabsContent value="skills" className="h-full w-full">
                 <Skills />
               </TabsContent>
               <TabsContent value="about" className="w-full">
