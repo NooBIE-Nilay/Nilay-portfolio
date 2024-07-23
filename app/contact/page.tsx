@@ -15,24 +15,24 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
+const info = [
+  {
+    icon: <FaPhoneAlt />,
+    title: "Phone",
+    description: "(+91) 8167 5880 98",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "nbanerjee02.asn@gmail.com",
+  },
+  {
+    icon: <FaMapMarkedAlt />,
+    title: "Address",
+    description: "Durgapur, West Bengal, India",
+  },
+];
 export default function Contact() {
-  const info = [
-    {
-      icon: <FaPhoneAlt />,
-      title: "Phone",
-      description: "(+91) 8167 5880 98",
-    },
-    {
-      icon: <FaEnvelope />,
-      title: "Email",
-      description: "nbanerjee02.asn@gmail.com",
-    },
-    {
-      icon: <FaMapMarkedAlt />,
-      title: "Address",
-      description: "Durgapur, West Bengal, India",
-    },
-  ];
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -48,8 +48,9 @@ export default function Contact() {
             <form className="flex flex-col gap-6 rounded-xl bg-[#27272c] p-10">
               <h3 className="text-3xl text-accent">Let's Work Together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
-                autem?
+                Let's build something amazing together! Have a project in mind
+                or simply want to connect? Feel free to reach out. I'm eager to
+                discuss your ideas and explore potential collaborations.
               </p>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Input type="firstname" placeholder="Firstname" />

@@ -1,10 +1,10 @@
 "use client";
 import CountUp from "react-countup";
 const stats = [
-  { end: 5000, text: "Hours Of Coding" },
+  { end: 100, text: "Code Commits" },
   { end: 4, text: "Projects Completed" },
   { end: 8, text: "Technologies Mastered" },
-  { end: 100, text: "Code Commits" },
+  { end: 5000, text: "Hours Of Coding" },
 ];
 
 export function Stats() {
@@ -16,7 +16,7 @@ export function Stats() {
             return (
               <div
                 key={index}
-                className="flex flex-1 items-center justify-center gap-4 xl:justify-start"
+                className="flex flex-1 items-center justify-center gap-4 hover:text-accent xl:justify-start"
               >
                 <CountUp
                   end={stat.end}

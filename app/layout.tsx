@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="favicon.png" />
       <body className={jetBrainsMono.variable}>
         <Header />
         <StairTransition />
