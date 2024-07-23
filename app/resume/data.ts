@@ -1,7 +1,7 @@
 export const about = {
   title: "About me",
   description:
-    "I'm a 3rd Year Student at KIIT Bhubaneswar, Odisha, majoring in Computer Science and Systems Engineering.",
+    "I'm a 3rd Year Student at KIIT Bhubaneswar, Odisha, Majoring in Computer Science and Systems Engineering.",
   info: [
     {
       fieldName: "Name",

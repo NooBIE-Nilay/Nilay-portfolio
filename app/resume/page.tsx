@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Achievements } from "@/components/Achievements";
 import { Education } from "@/components/Education";
 import { Skills } from "@/components/Skills";
+import { About } from "@/components/About";
 export default function Resume() {
   return (
     <section>
@@ -22,7 +23,7 @@ export default function Resume() {
             defaultValue="skills"
             className="flex flex-col gap-[60px] xl:flex-row"
           >
-            <TabsList className="max-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
+            <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
               <TabsTrigger value="skills">Skills</TabsTrigger>
               <TabsTrigger value="achievements">Achievements</TabsTrigger>
               <TabsTrigger value="education">Education</TabsTrigger>
@@ -35,8 +36,11 @@ export default function Resume() {
               <TabsContent value="skills" className="h-full w-full">
                 <Skills />
               </TabsContent>
-              <TabsContent value="about" className="w-full">
-                about
+              <TabsContent
+                value="about"
+                className="w-full text-center xl:text-left"
+              >
+                <About />
               </TabsContent>
               <TabsContent value="education" className="w-full">
                 <Education />
