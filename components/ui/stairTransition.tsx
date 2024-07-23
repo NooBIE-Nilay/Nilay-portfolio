@@ -17,7 +17,7 @@ export default function StairTransition() {
             initial={{ opacity: 1 }}
             animate={{
               opacity: 0,
-              transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+              transition: { delay: 0.8, duration: 0.4, ease: "easeInOut" },
             }}
           />
         </div>

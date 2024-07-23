@@ -1,5 +1,5 @@
 "use client";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowDownRight } from "react-icons/bs";
 
@@ -35,7 +35,7 @@ export default function Services() {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 1.8, duration: 0.4, ease: "easeIn" },
+            transition: { delay: 1.6, duration: 0.4, ease: "easeIn" },
           }}
           className="grid grid-cols-1 gap-[60px] md:grid-cols-2"
         >

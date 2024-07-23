@@ -1,0 +1,32 @@
+export const projects = [
+  {
+    num: "01",
+    category: "Frontend",
+    title: "Coming Soon",
+    desc: "Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon",
+    stack: [{ name: "Html 5 " }, { name: "CSS 3" }, { name: "Js" }],
+    image: "/assets/work/thumb1.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "backend",
+    title: "Coming Soon",
+    desc: "Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon",
+    stack: [{ name: "Express" }, { name: "MongoDB" }, { name: "Zod" }],
+    image: "/assets/work/thumb2.png",
+    live: "",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "Robotics",
+    title: "Coming Soon",
+    desc: "Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon",
+    stack: [{ name: "Arduino" }, { name: "C#" }],
+    image: "/assets/work/thumb3.png",
+    live: "",
+    github: "",
+  },
+];
