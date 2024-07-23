@@ -13,12 +13,14 @@ import {
 import { motion } from "framer-motion";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Achievements } from "@/components/acheivements";
+
+import { Achievements } from "@/components/Achievements";
+import { Education } from "@/components/Education";
 
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat odio quae ea earum assumenda repellendus.",
+    "Proficient Full Stack developer with expertise in MERN stack and Next.js. Possessing a strong foundation in JavaScript, React, Node.js, Express, and MongoDB. Passionate about crafting robust and scalable web applications. Additionally, skilled in robotics with a focus on Embedded Systems",
   skillsList: [
     {
       icons: <FaHtml5 />,
@@ -92,7 +94,7 @@ export default function Resume() {
                 about
               </TabsContent>
               <TabsContent value="education" className="w-full">
-                education
+                <Education />
               </TabsContent>
             </div>
           </Tabs>
