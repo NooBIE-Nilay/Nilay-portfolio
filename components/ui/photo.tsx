@@ -23,7 +23,7 @@ export function Photo() {
           className="absolute h-[298px] w-[298px] mix-blend-lighten xl:h-[498px] xl:w-[498px]"
         >
           <Image
-            src="/assets/profile_pic.png"
+            src="/assets/pic_2_bg.png"
             priority
             quality={100}
             fill
