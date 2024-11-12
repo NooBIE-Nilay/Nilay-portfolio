@@ -1,6 +1,5 @@
 "use client";
 import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
-
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +13,9 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useRef, useState } from "react";
+import { toast } from "react-toastify";
+import { resolve } from "path";
 
 const info = [
   {
@@ -32,7 +34,106 @@ const info = [
     description: "Durgapur, West Bengal, India",
   },
 ];
+function containsOnlyAlphabetsOrNumbers(str: string) {
+  return str.split("").reduce((acc, char) => {
+    return (
+      acc &&
+      ((char >= "a" && char <= "z") ||
+        (char >= "A" && char <= "Z") ||
+        (char >= "0" && char <= "9"))
+    );
+  }, true);
+}
+function checkValidName(name: string): Boolean {
+  if (name.length < 0) return false;
+  if (name.length > 15) return false;
+  if (!containsOnlyAlphabetsOrNumbers(name)) return false;
+  return true;
+}
+
+function validateEmail(email: string) {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+function checkValidEmail(email: string): Boolean {
+  if (email.length <= 0) return false;
+  if (email.length > 25) return false;
+
+  if (!validateEmail(email)) return false;
+  return true;
+}
+function validatePhone(str: string) {
+  return str.split("").reduce((acc, char) => {
+    return (acc && char >= "0" && char <= "9") || char == " ";
+  }, true);
+}
+
+function checkValidPhone(phone: string) {
+  if (phone.length >= 18) return false;
+  return validatePhone(phone);
+}
+
 export default function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendMessage = async (e: any) => {
+    e.preventDefault();
+    checkValidEmail(email);
+    if (email == "" && phone == "") {
+      toast.warn("Please Enter Either Email Or Contact No! ");
+      return;
+    }
+    if (message == "") {
+      toast.warn("Please Enter A Message!");
+      return;
+    }
+    try {
+      const subject = "Contact Request From NilayCodes.in";
+      const body = {
+        firstName,
+        lastName,
+        email_id: email,
+        phone,
+        service,
+        message,
+      };
+      const myMail = "nbanerjee02.asn@gmail.com";
+      const emails = email ? email + ", " + myMail : myMail;
+      const timeout = new Promise((res, rej) => setTimeout(rej, 100000));
+      toast.promise(timeout, {
+        pending: "Sending Email ✉️",
+        success: "Email sent Successful",
+        error: "Email Sending Failed! ❌",
+      });
+
+      //TODO: use Promise to make this better
+      const res = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          subject,
+          body,
+          email: emails,
+        }),
+      });
+      const data = await res.json();
+      if (data.status === 200) {
+        toast.dismiss();
+        toast.success("Email Sent Successfully 🎉");
+        return;
+      } else {
+        toast.dismiss();
+        toast.error("Email Sending Failed! ❌");
+      }
+    } catch (error) {
+      console.log("Error sending Email", error);
+    }
+  };
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -53,38 +154,79 @@ export default function Contact() {
                 discuss your ideas and explore potential collaborations.
               </p>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email Address" />
-                <Input type="phone" placeholder="Phone Number" />
+                <Input
+                  type="firstname"
+                  placeholder="First Name"
+                  value={firstName}
+                  onChange={(e) => {
+                    const temp = e.target.value;
+                    if (checkValidName(temp)) setFirstName(temp);
+                  }}
+                />
+                <Input
+                  type="lastname"
+                  placeholder="Last Name"
+                  value={lastName}
+                  onChange={(e) => {
+                    const temp = e.target.value;
+                    if (checkValidName(temp)) setLastName(temp);
+                  }}
+                />
+                <Input
+                  type="email"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Input
+                  type="phone"
+                  placeholder="Phone Number"
+                  value={phone}
+                  onChange={(e) => {
+                    const temp = e.target.value;
+                    if (checkValidPhone(temp)) {
+                      setPhone(temp);
+                    }
+                  }}
+                />
               </div>
-              <Select>
+              <Select
+                onValueChange={(value) => setService(value)}
+                defaultValue={service}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="full_stack">
+                    <SelectItem value="Full Stack Development">
                       Full Stack Development
                     </SelectItem>
-                    <SelectItem value="front_end">
+                    <SelectItem value="Front End Development">
                       Front End Development
                     </SelectItem>
-                    <SelectItem value="back_end">
+                    <SelectItem value="Back End Development">
                       Backend Development
                     </SelectItem>
-                    <SelectItem value="robotics">
+                    <SelectItem value="Robotics/Embedded Systems">
                       Robotics/Embedded Systems
                     </SelectItem>
+                    <SelectItem value="Others">Others</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               <Textarea
                 className="h-[200px]"
                 placeholder="Type your message here."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
-              <Button size="md" className="max-w-40 capitalize">
+              <Button
+                size="md"
+                className="max-w-40 capitalize"
+                onClick={sendMessage}
+              >
                 send message
               </Button>
             </form>

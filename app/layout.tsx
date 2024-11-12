@@ -4,6 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import PageTransition from "@/components/ui/pageTransition";
 import StairTransition from "@/components/ui/stairTransition";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -28,6 +30,7 @@ export default function RootLayout({
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
+        <ToastContainer theme="dark" hideProgressBar={true} />
       </body>
     </html>
   );
