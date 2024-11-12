@@ -41,16 +41,17 @@ export default function Work() {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold capitalize leading-none text-white transition-all duration-500 group-hover:text-accent">
-                {project.category} Project
+                {project.category}:{" "}
+                <a href={project.live} target="_blank">
+                  <span className="text-accent/80">{project.title}</span>
+                </a>
               </h2>
               <p className="text-white/60">{project.desc}</p>
-              <ul className="flex gap-4">
-                {/* @ts-ignore */}
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((tech, index) => {
                   return (
                     <li key={index} className="text-xl text-accent">
                       {tech.name}
-                      {/* @ts-ignore */}
                       {index !== project.stack.length - 1 && ","}
                     </li>
                   );
@@ -58,7 +59,6 @@ export default function Work() {
               </ul>
               <div className="border border-white/20"></div>
               <div className="item-center my-2 flex gap-4">
-                {/* @ts-ignore */}
                 <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -71,7 +71,6 @@ export default function Work() {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                {/* @ts-ignore */}
                 <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -97,17 +96,16 @@ export default function Work() {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="group relative flex h-[460px] items-center justify-center bg-pink-50/20">
-                      <div className="absolute bottom-0 top-0 z-10 h-full w-full bg-black/10"></div>
-                      <div className="relative h-full w-full">
+                    <a href={project.live} target="_blank">
+                      <div className="group relative flex h-[460px] cursor-pointer items-center justify-center rounded-3xl bg-pink-50/20">
                         <Image
                           fill
                           src={project.image}
                           alt="Project Image"
-                          className="delay-500"
+                          className="relative h-full w-full rounded-3xl delay-500"
                         ></Image>
                       </div>
-                    </div>
+                    </a>
                   </SwiperSlide>
                 );
               })}

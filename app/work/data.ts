@@ -1,13 +1,20 @@
 export const projects = [
   {
     num: "01",
-    category: "Frontend",
-    title: "Coming Soon",
-    desc: "Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon Coming Soon",
-    stack: [{ name: "Html 5 " }, { name: "CSS 3" }, { name: "Js" }],
-    image: "/assets/work/soon.avif",
-    live: "",
-    github: "",
+    category: "Web Game",
+    title: "Twist Tac Toe",
+    desc: "Twist Tac Toe Reimagines the Classic Game with an Innovative Twist: Instead of just placing X's and O's which results in a Draw, here your later moves can make your earlier ones disappear! It's a brain-twisting multiplayer game that'll keep you on your toes. Strategize carefully or your plans could vanish right before your eyes!",
+    stack: [
+      { name: "React" },
+      { name: "Socket.io" },
+      { name: "TailwindCSS" },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "WebSockets" },
+    ],
+    image: "/assets/work/t3.webp",
+    live: "https://ox.nilaycodes.in",
+    github: "https://github.com/NooBIE-Nilay/twist-tac-toe.git",
   },
   {
     num: "02",
